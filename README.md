@@ -1,7 +1,14 @@
+>**If you have any questions regarding this repository, please contact Ruida Zeng at ruida dot zeng at vanderbilt dot edu**
+
 ## Cluster Analysis on Subject Data in Immersive Virtual Environments
 This repository contains my work from the 2019 VUSE undergraduate summer research program, at the ***Learning in Virtual Environments (LIVE)*** research lab at [Vanderbilt University's School of Engineering](https://engineering.vanderbilt.edu). The graduate research assistant for this project is Richard Paris, who is responsible for the creation of the immersive virtual environments using Unity, and promptly conducted the experiments on around 200 subjects. The primary investigator for the project is [Dr. Bobby Bodenheimer](https://engineering.vanderbilt.edu/bio/robert-bodenheimer), associate professor at the [Department of Electrical Engineering and Computer Science](https://engineering.vanderbilt.edu/eecs/).
 
 It mainly consists of 143 parsed `.csv` files in the "Parsed Data" sub-folder and several machine learning source codes with a detailed explanation on the methodology attempted. I also included an [appendix](#appendix), which contains useful information regarding the raw data and the parsed data.
+
+**Note**: *Future research, either through a variety machine learning algorithms or otherwise, is encouraged on the 143, nicely parsed, `.csv` files containing information of the maze*.
+
+### Parsed Data
+The attributes of the parsed `.csv` files are `date/time`, `seconds since started`, `posX`, `posY`, `posZ`, `rotX`, `rotY`, `rotZ`, respectively. The raw tab-separated files before parsing contained more unimportant attributes but was sliced.
 
 ### `awslabel.py`
 Given that the frames are in folders by subject in an S3 bucket, this can take the images from each folder and relocate them to the file structure Data/Training/Label/File on the S3 bucket. I did this so I could batch upload the frames by subject and camera angle and then worry about labeling them later. It is worth noting that when I extracted the frames, I used the naming convention [subject number][camera number][frame number].jpg so that I could easily parse all this data from the file name for labeling purposes.
