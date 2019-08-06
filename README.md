@@ -18,23 +18,23 @@ Failed attempt at k-means clustering all (posX, posZ) in tuple forms in a numpy 
 #### `km_linear.py`
 Successful k-means clustering on (posX, posZ) tuples on a subject dataframe, imported from a singular parsed data file. In this example, I set the number of clusters to 8 for `AAAA.csv`, but they can be easily modified.
 
-![k-means linear plot](/resources/km_linear.png)
+![k-means linear plot](/Resources/km_linear.png)
 
 #### `km_quadruple.py`
 Traverse through all `.csv` files in the Parsed Data folder.
 Successful k-means clustering on (posX, posZ) tuples on each subject dataframe from all parsed data file. The quadruples are calculated from time spent around the vicinity of 4 decision points (intersections) in the maze.
 
-![k-means quadruple plot](/resources/km_quadruple.png)
+![k-means quadruple plot](/Resources/km_quadruple.png)
 
 #### `km_vector.py`
 Successful k-means clustering on decimated posY stacked on top of posX, forming a vector for each of the subject dataframe from all parsed data files. Since the codes require uniformity of vector size, we had to slice out 2 data files because of the particular decimation.
 
-![k-means vector plot](/resources/km_vector.png)
+![k-means vector plot](/Resources/km_vector.png)
 
 #### `km_vector_more.py`
 Successful k-means clustering on "less" decimated posY stacked on top of posX, forming a vector for each of the subject dataframe from all parsed data files. Since the codes require uniformity of vector size, we had to slice out 39 data files because of the particular decimation.
 
-![k-means vector more plot](/resources/km_vector_more.png)
+![k-means vector more plot](/Resources/km_vector_more.png)
 
 #### `makecsv.py`
 This source code generates a `.csv` file from the original, tab-separated, `.txt` file by applying my "find 10 min" slicing algorithm.
@@ -62,12 +62,12 @@ This script will not compile in its current form, due to it being legacy code.
 #### `visual.py`
 Visual representation using matplotlib module.
 
-![visual plot](/resources/visual.png)
+![visual plot](/Resources/visual.png)
 
 #### `turtle.py`
 Visual representation using turtle module (live animation).
 
-![turtle plot](/resources/turtle.png)
+![turtle plot](/Resources/turtle.png)
 
 ### Appendix
 The following tables contain the manuever I had to apply based on the graphic representation given by applying `matplotlibfullalgo.py` to each individual raw data, which is significantly larger, containing more unuseful data.
