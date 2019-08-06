@@ -20,10 +20,47 @@ Successful k-means clustering on (posX, posZ) tuples on a subject dataframe, imp
 
 ![k-means linear plot](/resources/km_linear.png)
 
-#### `km_quadraple.py`
+#### `km_quadruple.py`
 Traverse through all `.csv` files in the Parsed Data folder.
+Successful k-means clustering on (posX, posZ) tuples on a subject dataframe, imported from a singular parsed data file. In this example, I set the number of clusters to 8 for `AAAA.csv`, but they can be easily modified.
 
-![k-means linear plot](/resources/km_linear.png)
+![k-means quadruple plot](/resources/km_quadruple.png)
+
+#### `km_vector.py`
+Successful k-means clustering on (posX, posZ) tuples on a subject dataframe, imported from a singular parsed data file. In this example, I set the number of clusters to 8 for `AAAA.csv`, but they can be easily modified.
+
+![k-means vector plot](/resources/km_vector.png)
+
+#### `km_vector_more.py`
+Successful k-means clustering on (posX, posZ) tuples on a subject dataframe, imported from a singular parsed data file. In this example, I set the number of clusters to 8 for `AAAA.csv`, but they can be easily modified.
+
+![k-means vector more plot](/resources/km_vector_more.png)
+
+#### `makecsv.py`
+Successful k-means clustering on (posX, posZ) tuples on a subject dataframe, imported from a singular parsed data file. In this example, I set the number of clusters to 8 for `AAAA.csv`, but they can be easily modified.
+
+#### `matplotlibfullalgo.py`
+Successful k-means clustering on (posX, posZ) tuples on a subject dataframe, imported from a singular parsed data file. In this example, I set the number of clusters to 8 for `AAAA.csv`, but they can be easily modified.
+
+This script will not compile currently as it is legacy code.
+
+#### `quadruple.py`
+Successful k-means clustering on (posX, posZ) tuples on a subject dataframe, imported from a singular parsed data file. In this example, I set the number of clusters to 8 for `AAAA.csv`, but they can be easily modified.
+
+#### `subdir.py`
+This is the code I applied on the original, raw, data in order to find the 10 minutes of useful data. However, since this piece of "find 10 min" algorithm his code does not work on all, I wrote this script
+
+This script will not compile currently as it is legacy code.
+
+#### `subdir_multiple.py`
+This is a modification on the `subdir.py`, such that it will tell me which are the files that my "find 10 min" algorithm found ***two or more*** candidates.
+
+This script will not compile currently as it is legacy code.
+
+#### `subdir_unique.py`
+This is a modification on the `subdir.py`, such that it will tell me which are the files that my "find 10 min" algorithm found ***only one*** candidate.
+
+This script will not compile currently as it is legacy code.
 
 #### `visual.py`
 
