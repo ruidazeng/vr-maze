@@ -27,51 +27,50 @@ Successful k-means clustering on (posX, posZ) tuples on a subject dataframe, imp
 ![k-means quadruple plot](/resources/km_quadruple.png)
 
 #### `km_vector.py`
-Successful k-means clustering on (posX, posZ) tuples on a subject dataframe, imported from a singular parsed data file. In this example, I set the number of clusters to 8 for `AAAA.csv`, but they can be easily modified.
+Successful k-means clustering on decimated posY stacked on top of posX, forming a vector for each of the subject dataframe from all parsed data files. Since the codes require uniformity of vector size, we had to slice out 2 data files because of the particular decimation.
 
 ![k-means vector plot](/resources/km_vector.png)
 
 #### `km_vector_more.py`
-Successful k-means clustering on (posX, posZ) tuples on a subject dataframe, imported from a singular parsed data file. In this example, I set the number of clusters to 8 for `AAAA.csv`, but they can be easily modified.
+Successful k-means clustering on "less" decimated posY stacked on top of posX, forming a vector for each of the subject dataframe from all parsed data files. Since the codes require uniformity of vector size, we had to slice out 39 data files because of the particular decimation.
 
 ![k-means vector more plot](/resources/km_vector_more.png)
 
 #### `makecsv.py`
-Successful k-means clustering on (posX, posZ) tuples on a subject dataframe, imported from a singular parsed data file. In this example, I set the number of clusters to 8 for `AAAA.csv`, but they can be easily modified.
+This source code generates a `.csv` file from the original, tab-separated, `.txt` file by applying my "find 10 min" slicing algorithm.
 
 #### `matplotlibfullalgo.py`
-Successful k-means clustering on (posX, posZ) tuples on a subject dataframe, imported from a singular parsed data file. In this example, I set the number of clusters to 8 for `AAAA.csv`, but they can be easily modified.
+Returns a visual representation using matplotlib module of a 10 minutes slot found by my "find 10 min" slicing algorithm. This visual is used to determine whether or not my algorithm has found the correct 10 minutes.
 
-This script will not compile currently as it is legacy code.
-
-#### `quadruple.py`
-Successful k-means clustering on (posX, posZ) tuples on a subject dataframe, imported from a singular parsed data file. In this example, I set the number of clusters to 8 for `AAAA.csv`, but they can be easily modified.
+This script will not compile in its current form, due to it being legacy code.
 
 #### `subdir.py`
-This is the code I applied on the original, raw, data in order to find the 10 minutes of useful data. However, since this piece of "find 10 min" algorithm his code does not work on all, I wrote this script
+This is the code I applied on the original, raw, data in order to find the 10 minutes of useful data. However, since this piece of "find 10 min" algorithm his code does not work on all, I wrote this script to iterate through every original raw data file to determine the efficiency of my algorithms.
 
-This script will not compile currently as it is legacy code.
+This script will not compile in its current form, due to it being legacy code.
 
 #### `subdir_multiple.py`
-This is a modification on the `subdir.py`, such that it will tell me which are the files that my "find 10 min" algorithm found ***two or more*** candidates.
+This is a modification on the `subdir.py`, such that it will tell me which are the files that my "find 10 min" slicing algorithm found ***two or more*** candidates.
 
-This script will not compile currently as it is legacy code.
+This script will not compile in its current form, due to it being legacy code.
 
 #### `subdir_unique.py`
-This is a modification on the `subdir.py`, such that it will tell me which are the files that my "find 10 min" algorithm found ***only one*** candidate.
+This is a modification on the `subdir.py`, such that it will tell me which are the files that my "find 10 min" slicing algorithm found ***only one*** candidate.
 
-This script will not compile currently as it is legacy code.
+This script will not compile in its current form, due to it being legacy code.
 
 #### `visual.py`
+Visual representation using matplotlib module.
 
 ![visual plot](/resources/visual.png)
 
 #### `turtle.py`
+Visual representation using turtle module (live animation).
 
 ![turtle plot](/resources/turtle.png)
 
 ### Appendix
-The following tables contain the manuever I had to apply based on the graphic representation given by applying `matplotfullalgo.py` to each individual raw data, which is significantly larger and is 
+The following tables contain the manuever I had to apply based on the graphic representation given by applying [`matplotfullalgo.py`](#matplotlibfullalgo) to each individual raw data, which is significantly larger and is [
 
 **`Y`** indicates that the data was parsed out perfectly, **`N`** indicates that I hardcoded a shift of 10 minutes because the visual gave us a visual representation of the training maze which procedes the learning maze, and **`X`** indicates throwing out the data completely because the visual made no sense even after hardcoded tinkering.
 
