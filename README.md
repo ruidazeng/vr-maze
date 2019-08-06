@@ -22,7 +22,7 @@ Successful k-means clustering on (posX, posZ) tuples on a subject dataframe, imp
 
 #### `km_quadruple.py`
 Traverse through all `.csv` files in the Parsed Data folder.
-Successful k-means clustering on (posX, posZ) tuples on a subject dataframe, imported from a singular parsed data file. In this example, I set the number of clusters to 8 for `AAAA.csv`, but they can be easily modified.
+Successful k-means clustering on (posX, posZ) tuples on each subject dataframe from all parsed data file. The quadruples are calculated from time spent around the vicinity of 4 decision points (intersections) in the maze.
 
 ![k-means quadruple plot](/resources/km_quadruple.png)
 
