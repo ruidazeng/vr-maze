@@ -5,37 +5,33 @@ This repository contains my work from the 2019 VUSE undergraduate summer researc
 
 It mainly consists of 143 parsed `.csv` files in the "Parsed Data" sub-folder and several machine learning source codes with a detailed explanation on the methodology attempted. I also included an [appendix](#appendix), which contains useful information regarding the raw data and the parsed data.
 
-**Note**: *Future research, either through a variety machine learning algorithms or otherwise, is encouraged on the 143, nicely parsed, `.csv` files containing information of the maze*.
+**Note**: *Future research, either through a variety machine learning algorithms or otherwise, is encouraged on the 143, nicely parsed, `.csv` files containing information of the maze.*
+
+***Python modules required to be installed: numpy, pandas, sklearn, matplotlib and their dependencies.***
 
 ### Parsed Data
-The attributes of the parsed `.csv` files are `date/time`, `seconds since started`, `posX`, `posY`, `posZ`, `rotX`, `rotY`, `rotZ`, respectively. The raw tab-separated files before parsing contained more unimportant attributes but was sliced.
+The attributes of the parsed `.csv` files are `date/time`, `seconds since started`, `posX`, `posY`, `posZ`, `rotX`, `rotY`, `rotZ`, respectively. The raw tab-separated `.txt` files before parsing contained more unimportant attributes but was sliced.
 
-### `awslabel.py`
-Given that the frames are in folders by subject in an S3 bucket, this can take the images from each folder and relocate them to the file structure Data/Training/Label/File on the S3 bucket. I did this so I could batch upload the frames by subject and camera angle and then worry about labeling them later. It is worth noting that when I extracted the frames, I used the naming convention [subject number][camera number][frame number].jpg so that I could easily parse all this data from the file name for labeling purposes.
+#### `failed_km.py`
+Failed attempt at k-means clustering all (posX, posZ) in tuple forms in a numpy array, from 5 distinct pandas dataframes which were imported from the first 5 parsed data alphabetically. Returned `ValueError: Found array with dim 3. Estimator expected <= 2`.
 
-### `clean.py`
-The single function in this file deletes all files in a given directory. I used it when I was testing locally to save space each time I tried running label scripts.
+#### `km_linear.py`
+Successful k-means clustering on (posX, posZ) tuples on a subject dataframe, imported from a singular parsed data file. In this example, I set the number of clusters to 8 for `AAAA.csv`, but they can be easily modified.
 
-### `count.py`
-This is another file for local testing that takes a single subject and splits each of its procedures into test, validation, and training data.
+![k-means linear plot](/resources/km_linear.png)
 
-### `ec2.py`
-This script just automates the SSH process. So you can log in, run tasks, and get the outputs into Python. It has some potential to make scripts but I never played with it much. It was just when I thought I would need to interface more directly with EC2 from within Python.
+#### `km_quadraple.py`
+Traverse through all `.csv` files in the Parsed Data folder.
 
-### `label.py`
-Takes the procedure files from `spiltdata.py` and the frames from an extracted video and puts them in the corresponding procedure folder (label) in the corresponding subset's folder
+![k-means linear plot](/resources/km_linear.png)
 
-### `resizer.py`
-This script downloads a file from S3, converts it to dimensions 224x224, uploads the new version as a copy to S3, and then deletes it off the hard drive. I did this so that I could save the EC2 instance the time and processing power (and money) to convert them while the code is running.
+#### `visual.py`
 
-### `splitdata.py`
-This script takes the csv output from a .xslx file and outputs the procedure, start frame and end frame to its own file in folder framecsv. All procedures are also given their own csv with start and end frames in Data/ALL. To make them all uniform, I created a second row that has all of the names of the procedures where they are capitalized throughout. That means that the label is actually row 1 and not row 0. This basically creates the files I used to label all the frames in the other scripts.
+![visual plot](/resources/visual.png)
 
-### `tfimage.py`
-Loads the image data into TensorFlow and runs a simple neural network.
+#### `turtle.py`
 
-### `tfimagetemp.py`
-This is an attempt to set up an LSTM in the same tfimage.py code from above.
+![turtle plot](/resources/turtle.png)
 
 ### Appendix
 The following tables contain the manuever I had to apply based on the graphic representation given by applying `matplotfullalgo.py` to each individual raw data, which is significantly larger and is 
