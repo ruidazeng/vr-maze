@@ -10,10 +10,9 @@ def find_vector(subdirect, filename):
     vec = list()
     data = pd.read_csv(os.path.join(subdirect, filename))
     # print(subdirect)
-    X = data['posX'].values[0:30000:10]
-    Y = data['posZ'].values[0:30000:10]
-    # print(len(X), len(Y))
-    if len(X) != 3000 or len(Y) != 3000:
+    X = data['posX'].values[0:30000:1000]
+    Y = data['posZ'].values[0:30000:1000]
+    if len(X) != 30 or len(Y) != 30:
         # false/terminate
         return vec
 
@@ -95,12 +94,18 @@ for item in clusters:
     print(clusters[item])
 
 # Plot points by clusters
+from matplotlib import cm
+
+colorGrad = []
+for i in range(0,30):
+    colorGrad.append([i/30,0, 1-i/30])
+
 # Reorganize the printings
 for item in sorted(clusters):
     print("Cluster ", item)
     for i in clusters[item]:
         data = pd.read_csv(os.path.join(SUBDIRECT, i))
-        X = data['posX'].values[0:30000:100]
-        Y = data['posZ'].values[0:30000:100]
-        plt.scatter(X, Y)
+        X = data['posX'].values[0:30000:1000]
+        Y = data['posZ'].values[0:30000:1000]
+        plt.scatter(X, Y, c = colorGrad)
     plt.show()

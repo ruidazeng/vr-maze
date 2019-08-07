@@ -94,12 +94,18 @@ for item in clusters:
     print(clusters[item])
 
 # Plot points by clusters
+from matplotlib import cm
+
+colorGrad = []
+for i in range(0,30):
+    colorGrad.append([i/30,0, 1-i/30])
+
 # Reorganize the printings
-for item in clusters:
+for item in sorted(clusters):
     print("Cluster ", item)
     for i in clusters[item]:
         data = pd.read_csv(os.path.join(SUBDIRECT, i))
         X = data['posX'].values[0:30000:1000]
         Y = data['posZ'].values[0:30000:1000]
-        plt.scatter(X, Y, cmap='bwr')
+        plt.scatter(X, Y, c = colorGrad)
     plt.show()

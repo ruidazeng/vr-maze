@@ -95,7 +95,7 @@ for item in clusters:
 
 # Plot points by clusters
 # Reorganize the printings
-for item in clusters:
+for item in sorted(clusters):
     print("Cluster ", item)
     for i in clusters[item]:
         data = pd.read_csv(os.path.join(SUBDIRECT, i))
