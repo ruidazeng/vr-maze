@@ -4,7 +4,6 @@ import pandas as pd
 import numpy as np
 from matplotlib import pyplot as plt
 from sklearn.cluster import KMeans
-# from mpl_toolkits import mplot3d
 
 def find_vector(subdirect, filename):
     vec = list()
@@ -84,28 +83,52 @@ for item in y_kmeans:
         clusters[item] = [row_dict[n]]
     n +=1
 
-# for item in clusters:
-#     print("Cluster ", item)
-#     for i in clusters[item]:
-#         print(i)
-
-for item in clusters:
+for item in sorted(clusters):
     print("Cluster ", item)
     print(clusters[item])
 
 # Plot points by clusters
 from matplotlib import cm
+from mpl_toolkits.mplot3d import Axes3D
 
-colorGrad = []
-for i in range(0,30):
-    colorGrad.append([i/30,0, 1-i/30])
+# color: red is the beginning
+time = list(range(3000, 0, -1))
 
 # Reorganize the printings
 for item in sorted(clusters):
     print("Cluster ", item)
+
+    # create the plot windows
+    fig = plt.figure()
+    ax = fig.add_subplot(111, projection='3d')
+    X = [0 for _ in range(3000)]
+    Y = [0 for _ in range(3000)]
+
     for i in clusters[item]:
         data = pd.read_csv(os.path.join(SUBDIRECT, i))
-        X = data['posX'].values[0:30000:1000]
-        Y = data['posZ'].values[0:30000:1000]
-        plt.scatter(X, Y, c = colorGrad)
+        small_x = data['posX'].values[::10]
+        small_y = data['posZ'].values[::10]
+
+        # O(N^2)
+        index = 0
+        for x, y in zip(small_x, small_y):
+            X[index] += x
+            Y[index] += y
+            index += 1
+
+        for i in range(len(small_x)):
+            X[i] /= index
+            Y[i] /= index
+
+
+
+
+    t_size = len(X)
+    # colorGrad customized
+    colorGrad = []
+    for i in range(0, t_size):
+        colorGrad.append([i/t_size, 0, 1 - i/t_size])
+    time = list(range(0, t_size))
+    ax.scatter(X, Y, time, c=colorGrad)
+    # plt.scatter(X, Y, time, c=c, marker=m)
     plt.show()

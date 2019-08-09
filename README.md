@@ -29,6 +29,16 @@ This script will not compile in its current form, due to it being legacy code.
 #### `failed_km.py`
 Failed attempt at k-means clustering all (posX, posZ) in tuple forms in a numpy array, from 5 distinct pandas dataframes which were imported from the first 5 parsed data alphabetically. Returned `ValueError: Found array with dim 3. Estimator expected <= 2`.
 
+#### `km_3d.py`
+Temporal attribute (time) is added as the Z-axis for 3D visual representation of the clusters.
+
+![k-means 3d](/Resources/km_3d.png)
+
+#### `km_avg.py`
+A 3D representation, with time as the Z-axis, of the average (mean) position of the clusters. Returned `IndexError: list index out of range` for certain clusters (yet to be debugged).
+
+![k-means average](/Resources/km_avg.png)
+
 #### `km_linear.py`
 Successful k-means clustering on (posX, posZ) tuples on a subject dataframe, imported from a singular parsed data file. In this example, I set the number of clusters to 8 for `AAAA.csv`, but they can be easily modified.
 

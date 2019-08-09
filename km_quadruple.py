@@ -82,7 +82,7 @@ for item in y_kmeans:
         clusters[item] = [row_dict[n]]
     n +=1
 
-for item in clusters:
+for item in sorted(clusters):
     print("Cluster ", item)
     for i in clusters[item]:
         print(i)
