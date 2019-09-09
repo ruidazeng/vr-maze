@@ -104,6 +104,10 @@ Visual representation using turtle module (live animation).
 ![turtle plot](/Resources/turtle.png)
 
 ### Appendix
+I prepared a poster presentation for 2019 Vanderbilt School of Engineering Summer Undergraduate Research Experience Program as 2019 Summer Research Fellow.
+![poster presentation](/Resources/poster.png)
+
+ 
 The following tables contain the manuever I had to apply based on the graphic representation given by applying `matplotlibfullalgo.py` to each individual raw data, which is significantly larger, containing more unuseful data.
 
 **`Y`** indicates that the data was parsed out perfectly, **`N`** indicates that I hardcoded a shift of 10 minutes because the visual gave us a visual representation of the training maze which procedes the learning maze, and **`X`** indicates throwing out the data completely because the visual made no sense even after hardcoded tinkering.
