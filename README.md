@@ -105,7 +105,7 @@ Visual representation using turtle module (live animation).
 
 ### Appendix
 I prepared a poster presentation for 2019 Vanderbilt School of Engineering Summer Undergraduate Research Experience Program as 2019 Summer Research Fellow.
-![poster presentation](/Resources/poster.png)
+![poster presentation](/Resources/poster.jpg)
 
  
 The following tables contain the manuever I had to apply based on the graphic representation given by applying `matplotlibfullalgo.py` to each individual raw data, which is significantly larger, containing more unuseful data.
