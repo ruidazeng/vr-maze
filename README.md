@@ -105,6 +105,7 @@ Visual representation using turtle module (live animation).
 
 ### Appendix
 I prepared a poster presentation for 2019 Vanderbilt School of Engineering Summer Undergraduate Research Experience Program as 2019 Summer Research Fellow.
+
 ![poster presentation](/Resources/poster.jpg)
 
  
